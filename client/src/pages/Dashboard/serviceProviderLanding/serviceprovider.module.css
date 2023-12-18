@@ -1,0 +1,50 @@
+.container {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tableHome tbody {
+    overflow: scroll;
+}
+
+.tableHome tbody> :nth-child(even) {
+    background-color: #e9eaec;
+}
+
+.tableHome tr th,
+td {
+    padding: 20px;
+}
+
+.tableHome tr td {
+    border-bottom: 1px solid #1C469A;
+}
+
+.tableHeadRow th {
+    background-color: #1C469A;
+    height: 50px;
+    color: white;
+    text-align: start;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.tableHeadRow th:first-child {
+    border-radius: 10px 0px 0px 0px !important;
+}
+
+.tableHeadRow th:last-child {
+    border-radius: 0px 10px 0px 0px !important;
+}
+
+.time_box {
+    color: black;
+    font-weight: 800;
+    background-color: rgba(220, 220, 218, 0.5);
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    width: 60%
+}

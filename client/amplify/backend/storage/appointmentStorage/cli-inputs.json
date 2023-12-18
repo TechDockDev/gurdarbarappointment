@@ -1,0 +1,16 @@
+{
+  "resourceName": "appointmentStorage",
+  "policyUUID": "3fbbcc8d",
+  "bucketName": "appointment",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "groupAccess": {},
+  "triggerFunction": "profileAvatar"
+}

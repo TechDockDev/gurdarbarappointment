@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "paths": {
+    "/service-provider-types": {
+      "name": "/service-provider-types",
+      "lambdaFunction": "serviceProviderTypes",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/service-provider": {
+      "name": "/service-provider",
+      "lambdaFunction": "serviceProvider",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
+      }
+    },
+    "/appointment": {
+      "name": "/appointment",
+      "lambdaFunction": "appointment",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
+      }
+    },
+    "/customer": {
+      "name": "/customer",
+      "lambdaFunction": "customer",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
+      }
+    }
+  }
+}

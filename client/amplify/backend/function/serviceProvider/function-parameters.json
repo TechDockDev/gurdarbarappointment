@@ -1,0 +1,24 @@
+{
+  "lambdaLayers": [
+    {
+      "type": "ProjectLayer",
+      "resourceName": "appointmentDB",
+      "version": "Always choose latest version",
+      "isLatestVersionSelected": true,
+      "env": "newenv"
+    }
+  ],
+  "permissions": {
+    "auth": {
+      "appointment9712a810": [
+        "read"
+      ]
+    }
+  },
+  "environmentVariableList": [
+    {
+      "cloudFormationParameterName": "region",
+      "environmentVariableName": "region"
+    }
+  ]
+}

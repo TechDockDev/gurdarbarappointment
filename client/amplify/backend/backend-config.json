@@ -1,0 +1,331 @@
+{
+  "api": {
+    "appointmentApi": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "serviceProviderTypes"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "serviceProvider"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "appointment"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "customer"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "auth": {
+    "appointment9712a810": {
+      "customAuth": false,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "appointment9712a810PostConfirmation",
+          "triggerProvider": "Cognito"
+        }
+      ],
+      "frontendAuthConfig": {
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": [],
+          "passwordPolicyMinLength": 8
+        },
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito"
+    }
+  },
+  "function": {
+    "appointment": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "appointment9712a810"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "appointmentDB"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "appointment9712a810PostConfirmation": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "appointmentDB"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "appointmentDB": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "LambdaLayer"
+    },
+    "customer": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "appointment9712a810"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "appointmentDB"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "profileAvatar": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "appointmentDB"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "serviceProvider": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "appointment9712a810"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "appointmentDB"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "serviceProviderTypes": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "appointmentDB"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_appointment9712a810PostConfirmation_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "appointment9712a810PostConfirmation"
+        }
+      ]
+    },
+    "AMPLIFY_function_appointment9712a810PostConfirmation_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "appointment9712a810PostConfirmation"
+        }
+      ]
+    },
+    "AMPLIFY_function_appointmentDB_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "appointmentDB"
+        }
+      ]
+    },
+    "AMPLIFY_function_appointmentDB_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "appointmentDB"
+        }
+      ]
+    },
+    "AMPLIFY_function_appointment_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "appointment"
+        }
+      ]
+    },
+    "AMPLIFY_function_appointment_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "appointment"
+        }
+      ]
+    },
+    "AMPLIFY_function_customer_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "customer"
+        }
+      ]
+    },
+    "AMPLIFY_function_customer_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "customer"
+        }
+      ]
+    },
+    "AMPLIFY_function_profileAvatar_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "profileAvatar"
+        }
+      ]
+    },
+    "AMPLIFY_function_profileAvatar_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "profileAvatar"
+        }
+      ]
+    },
+    "AMPLIFY_function_serviceProviderTypes_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "serviceProviderTypes"
+        }
+      ]
+    },
+    "AMPLIFY_function_serviceProviderTypes_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "serviceProviderTypes"
+        }
+      ]
+    },
+    "AMPLIFY_function_serviceProvider_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "serviceProvider"
+        }
+      ]
+    },
+    "AMPLIFY_function_serviceProvider_region": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "serviceProvider"
+        }
+      ]
+    },
+    "AMPLIFY_function_serviceProvider_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "serviceProvider"
+        }
+      ]
+    }
+  },
+  "storage": {
+    "appointmentStorage": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "LambdaExecutionRole"
+          ],
+          "category": "function",
+          "resourceName": "profileAvatar"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "S3"
+    }
+  }
+}

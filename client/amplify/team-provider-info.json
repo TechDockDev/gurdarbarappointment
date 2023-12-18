@@ -1,0 +1,59 @@
+{
+  "newenv": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-appointment-newenv-115609-authRole",
+      "UnauthRoleArn": "arn:aws:iam::733440761563:role/amplify-appointment-newenv-115609-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::733440761563:role/amplify-appointment-newenv-115609-authRole",
+      "Region": "ap-southeast-1",
+      "DeploymentBucketName": "amplify-appointment-newenv-115609-deployment",
+      "UnauthRoleName": "amplify-appointment-newenv-115609-unauthRole",
+      "StackName": "amplify-appointment-newenv-115609",
+      "StackId": "arn:aws:cloudformation:ap-southeast-1:733440761563:stack/amplify-appointment-newenv-115609/2d9e1710-97ee-11ee-b298-06a99e20747c",
+      "AmplifyAppId": "d25ace0gpeiar6",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-appointment-newenv-115609-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-appointment-newenv-115609-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+    },
+    "categories": {
+      "auth": {
+        "appointment9712a810": {}
+      },
+      "function": {
+        "appointment": {
+          "deploymentBucketName": "amplify-appointment-newenv-115609-deployment",
+          "s3Key": "amplify-builds/appointment-447476775a6b49417438-build.zip"
+        },
+        "appointmentDB": {
+          "deploymentBucketName": "amplify-appointment-newenv-115609-deployment",
+          "s3Key": "amplify-builds/appointmentDB-LambdaLayerVersionfe0a474b-build.zip"
+        },
+        "customer": {
+          "deploymentBucketName": "amplify-appointment-newenv-115609-deployment",
+          "s3Key": "amplify-builds/customer-2f756f63674943386630-build.zip"
+        },
+        "profileAvatar": {
+          "deploymentBucketName": "amplify-appointment-newenv-115609-deployment",
+          "s3Key": "amplify-builds/profileAvatar-43333869485948664e48-build.zip"
+        },
+        "serviceProvider": {
+          "deploymentBucketName": "amplify-appointment-newenv-115609-deployment",
+          "s3Key": "amplify-builds/serviceProvider-534450456b694f594f4a-build.zip",
+          "region": "ap-southeast-1"
+        },
+        "serviceProviderTypes": {
+          "deploymentBucketName": "amplify-appointment-newenv-115609-deployment",
+          "s3Key": "amplify-builds/serviceProviderTypes-6753682f4d5031364d33-build.zip"
+        },
+        "appointment9712a810PostConfirmation": {
+          "deploymentBucketName": "amplify-appointment-newenv-115609-deployment",
+          "s3Key": "amplify-builds/appointment9712a810PostConfirmation-2f31524449536d395633-build.zip"
+        }
+      },
+      "storage": {
+        "appointmentStorage": {}
+      },
+      "api": {
+        "appointmentApi": {}
+      }
+    }
+  }
+}

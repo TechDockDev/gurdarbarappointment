@@ -1,0 +1,25 @@
+{
+  "trigger": true,
+  "modules": [
+    "custom"
+  ],
+  "parentResource": "appointment9712a810",
+  "functionName": "appointment9712a810PostConfirmation",
+  "resourceName": "appointment9712a810PostConfirmation",
+  "parentStack": "auth",
+  "triggerEnvs": "[]",
+  "triggerDir": "C:\\snapshot\\amplify-cli\\build\\node_modules\\@aws-amplify\\amplify-category-auth\\provider-utils\\awscloudformation\\triggers\\PostConfirmation",
+  "triggerTemplate": "PostConfirmation.json.ejs",
+  "triggerEventPath": "PostConfirmation.event.json",
+  "roleName": "appointment9712a810PostConfirmation",
+  "skipEdit": true,
+  "lambdaLayers": [
+    {
+      "type": "ProjectLayer",
+      "resourceName": "appointmentDB",
+      "version": "Always choose latest version",
+      "isLatestVersionSelected": true,
+      "env": "newenv"
+    }
+  ]
+}
